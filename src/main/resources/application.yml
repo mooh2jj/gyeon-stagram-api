@@ -32,7 +32,7 @@ app:
   props:
     jwt:
       secret-key: 1234567890123456789012345678901234567890
-      access-token-expiration-period: 15 # ???, 15?, ???? ?? 150?
+      access-token-expiration-period: 150 # ???, 15?, ???? ?? 150?
       refresh-token-expiration-period: 1440 # 24?? 60 * 24 = 1440?
 
     aws:

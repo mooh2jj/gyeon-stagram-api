@@ -13,7 +13,7 @@ public interface PostService {
                 .id(post.getId())
                 .title(post.getTitle())
                 .imageUrl(post.getImageUrl() == null ? null : post.getImageUrl())
-                .userName(post.getMember().getName())
+                .writer(post.getMember().getName())
                 .content(post.getContent())
                 .createdAt(post.getCreatedAt())
                 .build();
