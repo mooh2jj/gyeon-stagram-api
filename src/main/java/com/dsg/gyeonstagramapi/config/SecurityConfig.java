@@ -51,23 +51,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(
                 authorizeHttpRequests -> authorizeHttpRequests
                         .requestMatchers(new AntPathRequestMatcher("/api/member/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/product/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/content/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/test/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/chat/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/crawl/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/category/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/heart/**")).permitAll()
-                        // /api/admin/join, /api/admin/login,logout 모두 접근 가능
-                        .requestMatchers(new AntPathRequestMatcher("/api/admin/member/join")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/admin/member/login")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/admin/member/logout")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/admin/member/refresh")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/admin/product/view/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/admin/content/view/**")).permitAll()
-                        .requestMatchers(new AntPathRequestMatcher("/api/admin/product/excel/download")).permitAll()
-                        // api path에 admin 포함되면 ROLE_ADMIN 권한이 있어야 접근 가능,
-                        .requestMatchers(new AntPathRequestMatcher("/api/admin/**")).hasRole("ADMIN")
+                        .requestMatchers(new AntPathRequestMatcher("/api/post/**")).permitAll()
                         .anyRequest().authenticated()
         );
 

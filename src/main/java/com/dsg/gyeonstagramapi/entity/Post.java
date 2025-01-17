@@ -26,6 +26,7 @@ public class Post extends BaseEntity {
     private String content;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "email")
     private Member member;
 
     @ColumnDefault("0")
@@ -35,4 +36,8 @@ public class Post extends BaseEntity {
     @ElementCollection
     @Builder.Default
     private List<PostImage> imageList = new ArrayList<>();
+
+    public String getImageUrl() {
+        return this.imageList.get(0).getImageName();
+    }
 }

@@ -49,7 +49,7 @@ public class JWTCheckFilter extends OncePerRequestFilter {
         // "/api/product/list" api는 추가하지 말것!
 
         // /view 이미지 불러오기 api로 시작하는 요청은 필터를 타지 않도록 설정
-        if (path.startsWith("/api/product/view") || path.startsWith("/api/content/view")) {
+        if (path.startsWith("/api/product/view")) {
             return true;
         }
 
@@ -80,8 +80,8 @@ public class JWTCheckFilter extends OncePerRequestFilter {
         log.info("autHeaderStr Authorization: {}", autHeaderStr);
 
         if (autHeaderStr == null && (
-                request.getServletPath().startsWith("/api/product/list")
-                        || request.getServletPath().startsWith("/api/product/detail")
+                request.getServletPath().startsWith("/api/post/list")
+                        || request.getServletPath().startsWith("/api/post/detail")
         )) {
             filterChain.doFilter(request, response);
             return;

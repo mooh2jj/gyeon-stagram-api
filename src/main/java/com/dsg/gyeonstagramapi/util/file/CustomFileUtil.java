@@ -71,8 +71,8 @@ public class CustomFileUtil {
         } catch (IOException e) {
             e.printStackTrace();
             log.error("getFile error: {}", e.getMessage());
+            throw new IllegalArgumentException("File not found");
         }
-        return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 
